@@ -1,0 +1,85 @@
+name: Mental Health App
+description: An AMP to preprocess mental health data, run models, and deploy a mental health assistant application.
+author: Niranjan Kumar Kishore Kumar
+specification_version: 1.0
+prototype_version: 1.0
+date: "2024-10-09"
+
+environment_variables:
+  COHERE_API_KEY:
+    default: "your-cohere-api-key"
+    description: "API Key for Cohere LLM integration."
+    required: true
+
+runtimes:
+  - editor: Workbench
+    kernel: Python 3.10
+    edition: Standard
+
+tasks:
+
+  ## SESSION related AMP snippet
+  - type: run_session
+    name: Install Dependencies
+    script: 0_session-install-dependencies/install_dependencies.py
+    short_summary: Install project dependencies using the requirements.txt file.
+    kernel: python3
+    cpu: 2
+    memory: 4
+
+  ## JOB related AMP snippet for Preprocessing
+  - type: create_job
+    name: Data Preprocessing Job
+    entity_label: preprocess-job
+    script: 1_job-preprocess-data/job.py
+    arguments: None
+    cpu: 2
+    memory: 4
+    short_summary: Create a job to preprocess mental health data using preprocess.py.
+    environment:
+      TASK_TYPE: CREATE/RUN_JOB
+
+  - type: run_job
+    entity_label: preprocess-job
+    short_summary: Run the data preprocessing job to prepare text data and store FAISS embeddings.
+
+  ## MODEL related AMP snippet
+  - type: create_model
+    name: Mental Health Model
+    entity_label: mental-health-model
+    description: Creates a model to serve as a mental health assistant.
+    short_summary: Deploy a mental health assistant model.
+    default_resources:
+      cpu: 2
+      memory: 4
+      gpu: 1
+    default_replication_policy:
+      type: fixed
+      num_replicas: 1
+  
+  - type: build_model
+    name: Build Mental Health Model
+    entity_label: mental-health-model
+    comment: First build of the mental health assistant model.
+    examples:
+      - request:
+          prompt: How to deal with anxiety?
+          temperature: 0.7
+          max_new_tokens: 100
+          repetition_penalty: 0.7
+    target_file_path: 2_model-train-model/model.py
+    target_function_name: train_model
+
+  - type: deploy_model
+    entity_label: mental-health-model
+
+  ## APPLICATION related AMP snippet
+  - type: start_application
+    name: Mental Health Assistant App
+    short_summary: Start the mental health assistant web app.
+    long_summary: The mental health assistant app helps users with mental health tips, solutions, and more, powered by AI models.
+    subdomain: mental-health-assistant-app
+    script: 3_app-run-python-script/app.py
+    environment_variables:
+      TASK_TYPE: START_APPLICATION
+      COHERE_API_KEY: $COHERE_API_KEY  # Pass the API key to the app environment
