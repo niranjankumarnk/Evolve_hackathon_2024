@@ -88,10 +88,11 @@ chmod 600 ~/.kaggle/kaggle.json
 
 - Added a **`requirements.txt`** file listing all necessary Python packages such as:
   - Flask
-  - Cohere
+  - Cohere (LLM)
   - LangChain
   - LangChain-Cohere
   - LangChain-Community
+  - Sentence-transformers (Embeddings)
 
 - Created **`install-dependencies.py`** in the `0_session-install-dependencies/` folder to automatically install dependencies using `pip`.
 
