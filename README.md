@@ -1,10 +1,39 @@
 # Evolve_hackathon_2024
 This is AI Impact Hackathon conducted by Cloudera
 
-# Mental Health Assistant 
+# Mental Health Support Assistant
 
-This project is a Flask-based web application that leverages Cohere's language model and LangChain to provide mental health assistance by retrieving information from sources such as Wikipedia, YouTube, Arxiv, and a custom database.
+## Project Overview
+- **Flask-based web application** that serves as a mental health support assistant.
+- **Data Sources**: 
+  - A Kaggle mental health dataset that has been preprocessed, chunked, tokenized, and stored in a Faiss vector database for efficient retrieval.
+  - External sources like **Wikipedia**, **YouTube**, and **Arxiv** are integrated via **LangChain tools** to enrich responses with research papers and videos (e.g., exercises and solutions).
 
+## Components
+1. **Data Ingestion**:
+   - **Kaggle Mental Health Dataset**: Downloaded, preprocessed, and tokenized into smaller chunks.
+   - **Vector Storage with Faiss**: The chunked data is stored in a **Faiss vector database**, allowing efficient retrieval when queries are made.
+
+2. **Retrieval-Augmented Generation (RAG)**:
+   - The RAG model is used to retrieve relevant information based on user queries from the vector database, providing personalized responses for mental health queries.
+   
+3. **LangChain Tools**:
+   - **Wikipedia**: Retrieves knowledge-based answers to supplement responses from Faiss.
+   - **YouTube**: Provides links to relevant videos like exercises for stress management or relaxation techniques.
+   - **Arxiv**: Retrieves academic papers for users interested in more technical or research-based solutions.
+
+## Features
+- **Mental Health Support**: Answers user queries about mental health based on stored information and external resources.
+- **Exercise Recommendations**: Provides YouTube video links for exercises that help manage anxiety, depression, or stress.
+- **Research Papers**: Retrieves related academic papers from Arxiv for users who want deeper knowledge.
+- **General Knowledge Support**: Wikipedia integration for factual, generalized queries.
+
+## Next Steps/Improvements
+- **Real-Time Data Retrieval**: Ensure that the external sources like Arxiv and YouTube return the most current information.
+- **User Feedback Loop**: Implement feedback from users to refine the results further.
+- **Expand Dataset**: Add more mental health datasets for increased coverage.
+- **Fine-tune Cohere Model**: Continue refining the language model to improve its emotional support capabilities.
+- 
 ## What Was Done Today
 
 ### 1. **Project Structure Setup**
