@@ -4,7 +4,7 @@ This is AI Impact Hackathon conducted by Cloudera
 # Mental Health Support Assistant
 ## Used Cloudera Machine Learning Platform and AMP
 
-- Utilized the **Cloudera Machine Learning platform** along with **AMP (Applied Machine Learning Prototype)** for the mental health assistant project.
+- Utilized the **Cloudera Machine Learning platform** along with **AMP (Applied Machine Learning Prototype)** for the mental health support assistant project.
 - Integrated the platform to streamline project deployment and manage the application environment.
   
 ## Project Overview
