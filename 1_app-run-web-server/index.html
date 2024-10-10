@@ -2,77 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Assistant</title>
-    <style>
-        /* Add your CSS styling here */
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-        }
-        h1 {
-            text-align: center;
-        }
-        form {
-            margin-bottom: 30px;
-        }
-        .checkboxes {
-            margin-bottom: 10px;
-        }
-        .response {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-        }
-        input[type="submit"] {
-            padding: 10px 20px;
-        }
-        label {
-            display: block;
-        }
-        footer {
-            margin-top: 50px;
-            text-align: center;
-        }
-        hr {
-            margin-top: 50px;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🧠 Mental Health Assistant</h1>
-        <form method="post">
-            <label for="query">Enter your query:</label>
-            <input type="text" id="query" name="query" placeholder="e.g., How to overcome anxiety and get some exercise tips">
-
-            <div class="checkboxes">
-                <label><input type="checkbox" name="include_wikipedia" checked> Wikipedia</label>
-                <label><input type="checkbox" name="include_youtube" checked> YouTube</label>
-                <label><input type="checkbox" name="include_arxiv" checked> Arxiv</label>
-                <label><input type="checkbox" name="include_retrieval" checked> Database Retrieval</label>
-            </div>
-
-            <input type="submit" value="Submit">
-        </form>
-
-        {% if response %}
-        <div class="response">
-            {{ response | safe }}
-        </div>
-        {% endif %}
-
-        <footer>
-            <hr>
-            <p>Developed with ❤️ using Flask</p>
-        </footer>
-    </div>
+    <h1>Mental Health Assistant</h1>
+    <form method="post">
+        <label for="query">Enter your query:</label>
+        <input type="text" id="query" name="query" placeholder="How to overcome anxiety">
+        <button type="submit">Submit</button>
+    </form>
+    {% if response %}
+    <h2>Response</h2>
+    <p>{{ response | safe }}</p>
+    {% endif %}
 </body>
 </html>
