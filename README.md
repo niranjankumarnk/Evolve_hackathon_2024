@@ -37,8 +37,32 @@ This is AI Impact Hackathon conducted by Cloudera
 - **User Feedback Loop**: Implement feedback from users to refine the results further.
 - **Expand Dataset**: Add more mental health datasets for increased coverage.
 - **Fine-tune Cohere Model**: Continue refining the language model to improve its emotional support capabilities.
-- 
+
+
 ## What Was Done Today
+
+### Download Data 
+- **Kaggle link**: [Reddit Mental Health Dataset](https://www.kaggle.com/datasets/entenam/reddit-mental-health-dataset)
+  - Downloaded data from Kaggle using the `kagglehub` library.
+
+### To Use:
+
+1. **Install `kagglehub`**:
+   ```bash
+   pip install kagglehub
+   
+Generate and store Kaggle token:
+
+2. **Go to your Kaggle account and generate an API token.**
+   
+- This will download a kaggle.json file that contains your credentials.
+- Store the kaggle.json file in a .kaggle directory within your home directory:
+
+``` bash
+mkdir ~/.kaggle
+mv ~/Downloads/kaggle.json ~/.kaggle/
+chmod 600 ~/.kaggle/kaggle.json
+```
 
 ### 1. **Project Structure Setup**
 
