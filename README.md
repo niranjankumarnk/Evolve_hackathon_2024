@@ -1,7 +1,7 @@
 # Evolve_hackathon_2024
 This is AI Impact Hackathon conducted by Cloudera
 
-# Mental Health Assistant AMP
+# Mental Health Assistant 
 
 This project is a Flask-based web application that leverages Cohere's language model and LangChain to provide mental health assistance by retrieving information from sources such as Wikipedia, YouTube, Arxiv, and a custom database.
 
