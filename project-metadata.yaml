@@ -37,7 +37,7 @@ tasks:
   - type: create_job
     name: Process and Clean Data
     entity_label: process_clean_data
-    script: job.py
+    script: Evolve_hackathon_2024/job.py
     cpu: 2
     memory: 4
     short_summary: "Run the job to extract, load, clean the mental health data."
@@ -48,7 +48,7 @@ tasks:
   - type: create_job
     name: Preprocess Data and Create FAISS
     entity_label: preprocess_faiss
-    script: preprocess.py
+    script: Evolve_hackathon_2024/preprocess.py
     cpu: 2
     memory: 4
     short_summary: "Generate embeddings and store the processed mental health data in FAISS."
@@ -58,7 +58,7 @@ tasks:
   # Step 4: Run the main.py file to initialize tools and agent, and handle user queries
   - type: run_session
     name: Run Mental Health Assistant
-    script: main.py
+    script: Evolve_hackathon_2024/main.py
     kernel: python3
     cpu: 4
     memory: 8
@@ -72,7 +72,7 @@ tasks:
     short_summary: "Start the web interface for querying mental health-related information."
     long_summary: "This app uses Cohere LLM, FAISS vector search, and other tools to provide users with information related to mental health."
     subdomain: mental-health-assistant
-    script: main.py
+    script: Evolve_hackathon_2024/main.py
     environment_variables:
       TASK_TYPE: "START_APPLICATION"
     cpu: 4
