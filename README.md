@@ -62,7 +62,7 @@ Generate and store Kaggle token:
 
 ``` bash
 mkdir ~/.kaggle
-mv ~/Downloads/kaggle.json ~/.kaggle/
+mv ~/path/to/kaggle.json ~/.kaggle/
 chmod 600 ~/.kaggle/kaggle.json
 ```
 
