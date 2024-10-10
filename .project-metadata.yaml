@@ -27,7 +27,7 @@ tasks:
   # Step 1: Install dependencies for the project
   - type: run_session
     name: Install Dependencies
-    script: 0_session-install-dependencies/install-dependencies.py
+    script: 0_session_install_dependencies/install-dependencies.py
     short_summary: "Install the necessary dependencies like LangChain, FAISS, Cohere, etc."
     kernel: python3
     cpu: 2
