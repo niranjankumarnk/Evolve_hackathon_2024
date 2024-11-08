@@ -1,7 +1,8 @@
 # Evolve_hackathon_2024
 This is AI Impact Hackathon conducted by Cloudera
 
-![Won 3rd place]("C:\Users\Niranjan kumar\Downloads\evolve_hackathon_3rd place.jpeg")
+<img src="https://github.com/user-attachments/assets/a98b6feb-b4b2-4b7f-bd70-c3f24c22701c" alt="evolve_hackathon_3rd place" width="300"/>
+
 
 # Mental Health Support Assistant
 ## Used Cloudera Machine Learning Platform and AMP
