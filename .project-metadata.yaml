@@ -7,12 +7,12 @@ date: "2024-10-09"
 
 environment_variables:
   COHERE_API_KEY:
-    default: "996fB69PNLQjAiH4N2fnmTl4ccii91iz2Xr4mTfE"
+    default: "996fB69PNLQjAiH4N2fnmTl4ccii91izmTfE"
     description: "API key for accessing the Cohere LLM."
     required: true
 
   SERP_API_KEY:
-    default : "f39f64a7fef852a21486840761f31b9288a3f24c4e0689c40c16bff722daf5fb"
+    default : "f39f6a7fef852a2486840761f31b288a3f24c4e0689c40c16bff722da5fb"
     description: "API key for assessing google scolar."
     required: true 
     
